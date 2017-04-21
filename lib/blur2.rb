@@ -1,6 +1,8 @@
-# 
-# 
-# 
+# Given a black and white image, implement a blur method to run a transformation
+# on the image. Running the blur transformation causes any 1 in the image to
+# cause the pixel to the left, right, above and below to become a 1.
+
+# This is part two of a three part blur challenge.
 
 class Image
   attr_accessor :data
