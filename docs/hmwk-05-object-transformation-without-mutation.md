@@ -69,7 +69,7 @@
 
 ## Deliverables
 
-- Please create a repo called `homework-05` on Github.com and push your
+- Please create a repo on Github.com and push your
   finished work there.
 
 ## Resources
