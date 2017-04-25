@@ -1,11 +1,12 @@
 # Note to self: loop several times. run blur as many times as distance.
 
 class Image
-  attr_accessor :data
+  attr_accessor :data, :distance
   attr_reader :coordinates
   
-  def initialize(data)   
+  def initialize(data, distance=1)
    @data = data
+   @distance = distance
    @coordinates = []
   end
 
@@ -22,14 +23,21 @@ class Image
   end
 
   def blur
-    compile_coordinates
-    @coordinates.each do |coordinate|
-      row = coordinate[:row]
-      column = coordinate[:column]
-      @data[row-1][column] = 1 if row - 1 >= 0  # top
-      @data[row+1][column] = 1 if row + 1 <= @data.length - 1 # bottom
-      @data[row][column-1] = 1 if column - 1 >= 0  # left
-      @data[row][column+1] = 1 if column + 1 <= @data[0].length - 1  # right
+    @distance.times do 
+      compile_coordinates  
+      @coordinates.each do |coordinate|
+        row = coordinate[:row]
+        column = coordinate[:column]
+        @data[row-1][column] = 1 if row - 1 >= 0  # top
+        @data[row+1][column] = 1 if row + 1 <= @data.length - 1 # bottom
+        @data[row][column-1] = 1 if column - 1 >= 0  # left
+        @data[row][column+1] = 1 if column + 1 <= @data[0].length - 1  # right
+
+      end
     end
   end
 end
+
+
+
+
