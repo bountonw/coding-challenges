@@ -1,4 +1,7 @@
-# Note to self: loop several times. run blur as many times as distance.
+# Given an image, find all 1's and turn any pixels that can be reached 
+# by making n moves or less using only left, right, up or down from the 
+# starting point into 1's.
+
 
 class Image
   attr_accessor :data, :distance
