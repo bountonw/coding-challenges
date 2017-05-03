@@ -32,8 +32,20 @@
 #   4 examples, 0 failures
 #   ```
 
+#####
+# Steps
+# 1. Make array of arrays of every possible combination of 3 digits
+# 2. add the elements of each sub array
+# 3. If the sum of the elements equals 0 then return that array
+#####
 class Challenge2
   def self.sum_to_0(_array)
-    # your implementation goes here
+    result = []
+    groupings_of_three = _array.combination(3).to_a
+    groupings_of_three.each do |group|
+    	result << group if group.inject(&:+)  == 0
+    end
+    result
   end
 end
+
