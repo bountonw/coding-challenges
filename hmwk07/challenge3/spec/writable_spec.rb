@@ -25,5 +25,4 @@ describe Writable do
 
     expect(result).to eq('1a2b3c3a2b5c')
   end
-
 end

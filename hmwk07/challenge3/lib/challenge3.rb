@@ -19,8 +19,18 @@ require_relative 'writable'
 
 class Challenge3
   def self.rewrite(string, function)
-  	input_array = string.split('')
-  	# p input_array
-  	function.call(input_array)
+  	output_array = []
+  	sub_array = []
+  	string.split('').each do |char, index|
+  		if sub_array.empty? || char == sub_array.last
+  			sub_array << char
+  		else
+  			output_array << sub_array
+  			sub_array = [char]
+  		end
+  	end
+
+  	output_array << sub_array
+  	function.call(output_array)
   end
 end
