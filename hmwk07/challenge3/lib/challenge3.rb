@@ -12,7 +12,6 @@
 
 #   >> Challenge3.rewrite()
 
-
 #   Note: You are not to use regular expressions to complete this challenge.
 
 require_relative 'writable'
