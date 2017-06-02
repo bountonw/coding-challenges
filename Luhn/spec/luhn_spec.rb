@@ -10,12 +10,12 @@ RSpec.describe Luhn, type: :model do
       expect(Luhn.is_valid?(4194560385008505)).to be false
     end
 
-    it 'should give the wrong answer if you begin on the left side for valid numbers' do
-      expect(Luhn.is_valid?(377681478627336)).to be true
+    it 'should give the wrong answer if the number is not 16 digits' do
+      expect(Luhn.is_valid?(377681478627337)).to be false # 15 digits
     end
 
-    it 'should give the wrong answer if you begin on the left for invalid numbers' do
-      expect(Luhn.is_valid?(377681478627337)).to be false
+    it 'should return true for larger digits' do
+      expect(Luhn.is_valid?(4012888888881881)).to be true
     end
   end
 end
