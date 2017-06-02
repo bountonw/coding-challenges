@@ -1,23 +1,40 @@
 load 'node.rb'
 
 class Stack
-    attr_accessor :data, :next
+  attr_accessor :data
 
-    def initialize(data, next=nil)
-        @data = data
-        @next = next_node
-    end
+  def initialize
+    @data = nil
+  end
 
-    # Push a value onto the stack
-    def push(value)
-        
-    end
+  def push(value)
+    @data = Node.new(value, @data)
+  end
 
-    # Pop an item off the stack.
-    # Remove the last item that was pushed onto the
-    # stack and return the value to the user
-    def pop
-        # I RETURN A VALUE
-    end
+  def pop
+    top = @data
+    @data = top.next_node
+    top.value
+  end
 
+  def is_empty?
+    @data.nil?
+  end
 end
+
+# stack = Stack.new
+# # @data = nil
+# stack.push(10)
+# # (cons 10, nil)
+
+# stack.push(15)
+# # ( cons 15, (cons 10, nil))
+
+# stack.push(24)
+# # ( cons 24, ( cons 15, (cons 10, nil)))
+
+# # 24 --> 15 --> 10 --> nil
+
+#  # nil --> 10 --> 15 --> 24
+
+# p @data.next_node
