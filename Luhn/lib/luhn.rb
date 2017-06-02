@@ -14,6 +14,6 @@ module Luhn
     		array[index] = (digit * 2) >= 10 ? digit * 2 - 9 : digit * 2
     	end
     end
-    return array.reduce(:+) % 2 == 0
+    return array.reduce(:+) % 10 == 0
   end
 end
