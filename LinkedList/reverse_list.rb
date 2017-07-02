@@ -37,7 +37,7 @@ node4 = Node.new(41, node3)
 
 print_values(node4)
 print_seperator
-
+ 
 print_values(reverse_list(node4))
 print_seperator
 print_values(reverse_list_mutation(node4))
